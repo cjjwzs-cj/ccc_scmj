@@ -125,7 +125,7 @@ cc.Class({
         cc.vv.audioMgr.pauseAll();
         this.clearCache(filename);
         if(cc.sys.os == cc.sys.OS_ANDROID){
-            jsb.reflection.callStaticMethod("com/babykylin/VoiceRecorder", "prepare", "(Ljava/lang/String;)V",filename);
+            jsb.reflection.callStaticMethod("com/babykylin/voicesdk/VoiceRecorder", "prepare", "(Ljava/lang/String;)V",filename);
         }
         else if(cc.sys.os == cc.sys.OS_IOS){
             jsb.reflection.callStaticMethod("VoiceSDK", "prepareRecord:",filename);
@@ -138,7 +138,7 @@ cc.Class({
         }
         cc.vv.audioMgr.resumeAll();
         if(cc.sys.os == cc.sys.OS_ANDROID){
-            jsb.reflection.callStaticMethod("com/babykylin/VoiceRecorder", "release", "()V");
+            jsb.reflection.callStaticMethod("com/babykylin/voicesdk/VoiceRecorder", "release", "()V");
         }
         else if(cc.sys.os == cc.sys.OS_IOS){
             jsb.reflection.callStaticMethod("VoiceSDK", "finishRecord");
@@ -151,7 +151,7 @@ cc.Class({
         }
         cc.vv.audioMgr.resumeAll();
         if(cc.sys.os == cc.sys.OS_ANDROID){
-            jsb.reflection.callStaticMethod("com/babykylin/VoiceRecorder", "cancel", "()V");
+            jsb.reflection.callStaticMethod("com/babykylin/voicesdk/VoiceRecorder", "cancel", "()V");
         }
         else if(cc.sys.os == cc.sys.OS_IOS){
             jsb.reflection.callStaticMethod("VoiceSDK", "cancelRecord");
@@ -191,7 +191,7 @@ cc.Class({
         }
         cc.vv.audioMgr.pauseAll();
         if(cc.sys.os == cc.sys.OS_ANDROID){
-            jsb.reflection.callStaticMethod("com/babykylin/VoicePlayer", "play", "(Ljava/lang/String;)V",filename); 
+            jsb.reflection.callStaticMethod("com/babykylin/voicesdk/VoicePlayer", "play", "(Ljava/lang/String;)V",filename); 
         }
         else if(cc.sys.os == cc.sys.OS_IOS){
             jsb.reflection.callStaticMethod("VoiceSDK", "play:",filename);
@@ -206,7 +206,7 @@ cc.Class({
         }
         cc.vv.audioMgr.resumeAll();
         if(cc.sys.os == cc.sys.OS_ANDROID){
-            jsb.reflection.callStaticMethod("com/babykylin/VoicePlayer", "stop", "()V"); 
+            jsb.reflection.callStaticMethod("com/babykylin/voicesdk/VoicePlayer", "stop", "()V"); 
         }
         else if(cc.sys.os == cc.sys.OS_IOS){
             jsb.reflection.callStaticMethod("VoiceSDK", "stopPlay");
@@ -218,7 +218,7 @@ cc.Class({
     getVoiceLevel:function(maxLevel){
         return Math.floor(Math.random() * maxLevel + 1);
         if(cc.sys.os == cc.sys.OS_ANDROID){ 
-            return jsb.reflection.callStaticMethod("com/babykylin/VoiceRecorder", "getVoiceLevel", "(I)I",maxLevel);
+            return jsb.reflection.callStaticMethod("com/babykylin/voicesdk/VoiceRecorder", "getVoiceLevel", "(I)I",maxLevel);
         }
         else if(cc.sys.os == cc.sys.OS_IOS){
         }
@@ -253,7 +253,7 @@ cc.Class({
             return;
         }
         if(cc.sys.os == cc.sys.OS_ANDROID){ 
-            jsb.reflection.callStaticMethod("com/babykylin/VoiceRecorder", "setStorageDir", "(Ljava/lang/String;)V",dir);    
+            jsb.reflection.callStaticMethod("com/babykylin/voicesdk/VoiceRecorder", "setStorageDir", "(Ljava/lang/String;)V",dir);    
         }
         else if(cc.sys.os == cc.sys.OS_IOS){
             jsb.reflection.callStaticMethod("VoiceSDK", "setStorageDir:",dir);

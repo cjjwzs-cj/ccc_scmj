@@ -1,7 +1,7 @@
 if(cc.sys.isNative){
-    jsb.reflection.callStaticMethod = function(){
+    // jsb.reflection.callStaticMethod = function(){
         
-    }
+    // }
 }
 cc.Class({
     extends: cc.Component,
@@ -30,7 +30,7 @@ cc.Class({
     // },
     
     init:function(){
-        this.ANDROID_API = "com/babykylin/NativeAPI";
+        this.ANDROID_API = "com/babykylin/WXAPI";
         this.IOS_API = "AppController";
     },
 

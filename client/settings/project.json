@@ -11,8 +11,8 @@
       true
     ]
   ],
-  "design-resolution-height": 640,
-  "design-resolution-width": 960,
+  "design-resolution-height": 720,
+  "design-resolution-width": 1280,
   "excluded-modules": [
     "ParticleSystem",
     "TiledMap",
@@ -47,7 +47,7 @@
     "width": 960
   },
   "start-scene": "7898c3aa-75db-4523-8b22-e60bf7d83784",
-  "use-customize-simulator": false,
+  "use-customize-simulator": true,
   "use-project-simulator-setting": false,
   "assets-sort-type": "name",
   "migrate-history": []

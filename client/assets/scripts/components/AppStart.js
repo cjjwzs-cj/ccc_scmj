@@ -136,23 +136,29 @@ cc.Class({
     getServerInfo:function(){
         var self = this;
         var onGetVersion = function(ret){
+            if  (ret.version == null){
+                console.log("error.");
+            }
             cc.vv.SI = ret;
             if(cc.sys.isNative){
-                var url = cc.url.raw('resources/ver/cv.txt');
-                cc.loader.load(url,function(err,data){
-                    cc.VERSION = data;
-                    if(ret.version == null){
-                        console.log("error.");
+                var loadComplete = function(err, data){
+                    if (err) {
+                        console.log(err);
+                        return;
+                    }
+                    console.log(data);
+                    cc.VERSION = data.text;
+                    if(cc.vv.SI.version != cc.VERSION){
+                        cc.find("Canvas/alert").active = true;
                     }
                     else{
-                        if(cc.vv.SI.version != cc.VERSION){
-                            cc.find("Canvas/alert").active = true;
-                        }
-                        else{
-                            cc.director.loadScene(self._mainScene);
-                        }
+                        cc.director.loadScene(self._mainScene);
                     }
-                }.bind(this));
+                }.bind(this)
+
+                cc.loader.loadRes("ver/cv", loadComplete);
+                // var url = cc.url.raw('resources/ver/cv.txt');
+                // cc.loader.load(url, loadComplete);
             }
             else{
                 cc.director.loadScene(self._mainScene);
