@@ -104,13 +104,13 @@ cc.Class({
         var hpm = huaipaiinfo.getChildByName("hpm");
         hpm.active = true;
         if(cc.vv.gameNetMgr.huanpaimethod == 0){
-            hpm.rotation = 90;
+            hpm.angle = -90;
         }
         else if(cc.vv.gameNetMgr.huanpaimethod == 1){
-            hpm.rotation = 0;
+            hpm.angle = 0;
         }
         else if(cc.vv.gameNetMgr.huanpaimethod == 2){
-            hpm.rotation = 180;
+            hpm.angle = -180;
         }
         else{
             hpm.active = false;
